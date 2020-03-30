@@ -29,7 +29,7 @@ public class MovieResource {
     }
 
     @DeleteMapping("/delete/id/{id}")
-    public ResponseEntity<Long> deleteMovie(@PathVariable Long id) {
+    public ResponseEntity<Movie> deleteMovie(@PathVariable Long id) {
         return ResponseEntity.ok(movieService.deleteMovie(id));
     }
 

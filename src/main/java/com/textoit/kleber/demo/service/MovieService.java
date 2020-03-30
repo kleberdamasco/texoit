@@ -5,6 +5,7 @@ import com.textoit.kleber.demo.repository.MovieRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class MovieService {
@@ -21,11 +22,10 @@ public class MovieService {
         return repository.save(movie);
     }
 
-    public Long deleteMovie(Long id) {
-        Movie movie = new Movie();
-        movie.setId(id);
-        repository.delete(movie);
-        return id;
+    public Movie deleteMovie(Long id) {
+        Optional<Movie> movie = repository.findById(id);
+        repository.delete(movie.get());
+        return movie.get();
     }
 
     public void saveAll(List<Movie> movies) {
