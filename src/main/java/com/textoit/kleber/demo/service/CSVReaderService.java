@@ -3,6 +3,9 @@ package com.textoit.kleber.demo.service;
 import com.fasterxml.jackson.databind.MappingIterator;
 import com.fasterxml.jackson.dataformat.csv.CsvMapper;
 import com.fasterxml.jackson.dataformat.csv.CsvSchema;
+import com.textoit.kleber.demo.DemoApplication;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Component;
 
@@ -13,19 +16,22 @@ import java.util.List;
 @Component
 public class CSVReaderService {
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(DemoApplication.class);
     private final String FILE_NAME = "movielist.csv";
 
 
     public <T> List<T> loadObjectList(Class<T> type, String fileName) {
+        LOGGER.info("Creating data");
         try {
             CsvSchema bootstrapSchema = CsvSchema.emptySchema().withHeader().withColumnSeparator(';');
             CsvMapper mapper = new CsvMapper();
             File file = new ClassPathResource(fileName).getFile();
             MappingIterator<T> readValues =
                     mapper.reader(type).with(bootstrapSchema).readValues(file);
+            LOGGER.info("Data has been created");
             return readValues.readAll();
         } catch (Exception e) {
-            System.out.println(e);
+            LOGGER.error("Error when creating data");
             return Collections.emptyList();
         }
     }

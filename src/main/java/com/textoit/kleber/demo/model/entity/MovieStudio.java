@@ -8,12 +8,12 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.io.Serializable;
 
-@Entity
-@Table(name = "MovieStudio")
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
+//@Entity
+//@Table(name = "MovieStudio")
+//@Getter
+//@Setter
+//@AllArgsConstructor
+//@NoArgsConstructor
 public class MovieStudio implements Serializable {
 
     @Id

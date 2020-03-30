@@ -1,7 +1,7 @@
 package com.textoit.kleber.demo;
 
-import com.textoit.kleber.demo.service.MoviePopulateService;
 import com.textoit.kleber.demo.service.CSVReaderService;
+import com.textoit.kleber.demo.service.MoviePopulateService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +27,6 @@ public class DemoApplication implements ApplicationRunner {
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
-		LOGGER.info("Creating data");
 		moviePopulateService.createData();
 	}
 }

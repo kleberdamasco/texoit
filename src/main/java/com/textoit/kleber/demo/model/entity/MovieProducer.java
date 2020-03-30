@@ -1,19 +1,16 @@
 package com.textoit.kleber.demo.model.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
-import javax.persistence.*;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import java.io.Serializable;
 
-@Entity
-@Table(name = "MovieProducer")
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
+//@Entity
+//@Table(name = "MovieProducer")
+//@Getter
+//@Setter
+//@AllArgsConstructor
+//@NoArgsConstructor
 public class MovieProducer implements Serializable {
 
     @Id

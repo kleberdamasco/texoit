@@ -1,26 +1,28 @@
 package com.textoit.kleber.demo.service;
 
+import com.textoit.kleber.demo.converter.MovieDTOConverter;
 import com.textoit.kleber.demo.model.csv.MovieAwardDTO;
+import com.textoit.kleber.demo.model.entity.Movie;
 import org.springframework.stereotype.Component;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Component
 public class MoviePopulateService {
 
     private final CSVReaderService csvReaderService;
     private final MovieService movieService;
-    private final ProducerService producerService;
-    private final StudioService studioService;
 
 
-    public MoviePopulateService(CSVReaderService csvReaderService, MovieService movieService, ProducerService producerService, StudioService studioService) {
+    public MoviePopulateService(CSVReaderService csvReaderService, MovieService movieService) {
         this.csvReaderService = csvReaderService;
         this.movieService = movieService;
-        this.producerService = producerService;
-        this.studioService = studioService;
     }
 
 
-    public void createData(){
-        csvReaderService.loadObjectList(MovieAwardDTO.class);
+    public void createData() {
+        List<Movie> movies = csvReaderService.loadObjectList(MovieAwardDTO.class).stream().map(new MovieDTOConverter()).collect(Collectors.toList());
+        movieService.saveAll(movies);
     }
 }
