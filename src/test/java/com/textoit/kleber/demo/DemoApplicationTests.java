@@ -19,7 +19,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class DemoApplicationTests {
 
 	private static final String HOST = "http://localhost:";
-	private static final String PATH = "/api/movie-awards/v1/movies";
+	private static final String BASE_PATH = "/api/movie-awards/v1/movies";
 
 	@LocalServerPort
 	private int port;
@@ -44,7 +44,7 @@ class DemoApplicationTests {
 		movie.setWinner("yes");
 		movie.setYear(2029);
 
-		ResponseEntity<String> responseEntity = this.restTemplate.postForEntity(HOST + port + PATH + "/create", movie, String.class);
+		ResponseEntity<String> responseEntity = this.restTemplate.postForEntity(HOST + port + BASE_PATH + "/create", movie, String.class);
 		assertEquals(201, responseEntity.getStatusCodeValue());
 	}
 
