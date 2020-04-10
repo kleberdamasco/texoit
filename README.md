@@ -1,5 +1,6 @@
-###Especificação do Teste
-#####Desenvolva uma API RESTful para possibilitar a leitura da lista de indicados e vencedores da categoria Pior Filme do Golden Raspberry Awards
+### Especificação do Teste
+
+### Desenvolva uma API RESTful para possibilitar a leitura da lista de indicados e vencedores da categoria Pior Filme do Golden Raspberry Awards
 
 > **Requisito do sistema**
 
@@ -23,5 +24,8 @@ necessária;
 unitários.
 
 
-#####Contato
- [LinkedIn](https://www.linkedin.com/in/kleber-damasco-80b55728/) 😃 
+##### Contato
+
+ [LinkedIn](https://www.linkedin.com/in/kleber-damasco-80b55728/) 😃
+ 
+ [E-mail](mailto:kleberdamasco@hotmail.com) :envelope:
