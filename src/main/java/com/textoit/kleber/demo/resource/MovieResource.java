@@ -31,14 +31,9 @@ public class MovieResource {
         return ResponseEntity.ok(movieService.getAllWinners());
     }
 
-    @GetMapping("/producer/winnerfaster")
-    public ResponseEntity<Object> getProducerAllx(){
-        return ResponseEntity.ok(producerService.getMostIntervalProducerBetweenTwoAward(movieService.getAllWinners()));
-    }
-
-    @GetMapping("/producer/mostinterval")
-    public ResponseEntity<Object> getProducerAlsl(){
-        return ResponseEntity.ok(producerService.getMostIntervalProducerBetweenTwoAward(movieService.getAllWinners()));
+    @GetMapping("/producer/awardintervals")
+    public ResponseEntity<Object> getAwardIntervals(){
+        return ResponseEntity.ok(producerService.getAwardIntervals(movieService.getAllWinners()));
     }
 
     @DeleteMapping("/delete/id/{id}")

@@ -39,7 +39,7 @@ public class ProducerService {
         }
     }
 
-    public Object getMostIntervalProducerBetweenTwoAward(List<Movie> movies){
+    public Object getAwardIntervals(List<Movie> movies){
         createProducerMovieWinners(movies);
         Map<String, List<Integer[]>> producePairs = new HashMap<>(0);
         producerMoreThanOneAward.forEach((producer, years) -> {
