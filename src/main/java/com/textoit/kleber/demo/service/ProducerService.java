@@ -1,5 +1,6 @@
 package com.textoit.kleber.demo.service;
 
+import com.textoit.kleber.demo.converter.ProducerMostIntervalDTOConverter;
 import com.textoit.kleber.demo.model.entity.Movie;
 import org.springframework.stereotype.Service;
 
@@ -51,6 +52,6 @@ public class ProducerService {
                 }
             }
         });
-        return null;
+        return new ProducerMostIntervalDTOConverter().converter(pairs);
     }
 }
