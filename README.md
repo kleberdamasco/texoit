@@ -24,7 +24,7 @@ necessária;
 unitários.
 
 
-##### Contato
+##### Contato :bowtie:
 
  [LinkedIn](https://www.linkedin.com/in/kleber-damasco-80b55728/) 😃
  
