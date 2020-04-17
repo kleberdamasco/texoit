@@ -23,6 +23,15 @@ necessária;
 - A aplicação deve conter um readme com instruções para rodar o projeto e os testes
 unitários.
 
+#### Execução
+- `mvn spring-boot:run`
+- `curl http://localhost:8080/api/movie-awards/v1/movies/all` GET
+- `curl http://localhost:8080/api/movie-awards/v1/movies/all/winners` GET
+- `curl http://localhost:8080/api/movie-awards/v1/movies/producer/awardintervals` GET
+- `curl http://localhost:8080/api/movie-awards/v1/movies/delete/{id}` DELETE
+- `curl http://localhost:8080/api/movie-awards/v1/movies/create` POST
+
+
 
 ##### Contato :bowtie:
 
